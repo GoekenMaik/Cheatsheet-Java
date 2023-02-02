@@ -1,0 +1,512 @@
+\documentclass[a4paper, 8pt]{extarticle}
+\usepackage[a4paper, inner=0.4cm, outer=0.4cm, top=0.3cm, bottom=0.3cm]{geometry}
+
+\input{cheatsheetdef.tex}
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{fontspec}
+\usepackage[table]{xcolor}
+\usepackage[normalem]{ulem}
+\setsansfont[ItalicFont={Fira Sans Light Italic}, BoldFont={Fira Sans}, BoldItalicFont={Fira Sans Italic}]{Fira Sans Light}
+\setmonofont[BoldFont={Fira Mono Medium}]{Fira Mono}
+\setmainfont[ItalicFont={Fira Sans Light Italic}, BoldFont={Fira Sans}, BoldItalicFont={Fira Sans Italic}]{Fira Sans Light}
+\definecolor{headcol}{HTML}{23373b}
+
+
+\begin{document}
+\section*{Cheatsheet Java}\vspace{-10pt}
+\begin{minipage}[t]{0.25\linewidth}\vspace{0pt}
+\begin{tabular}{|p{0.9\linewidth}|}
+
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Comments}\\
+\\[-7pt]
+Single-line Comment:
+\\[-3pt]
+\begin{lstlisting}[language=Java, aboveskip=-2pt,belowskip=-6pt]
+ String txt = "Hello!";
+ //this is a Comment
+ System.out.println(txt);\end{lstlisting}
+ \\
+ Multi-line Comment:
+ \\[-3pt]
+ \begin{lstlisting}[language=Java, aboveskip=-2pt,belowskip=-6pt,mathescape]
+ String txt = "Hello!";
+ /*Comments will not be
+ executed */
+ System.out.println(txt);  
+\end{lstlisting}
+\\
+\hline
+\end{tabular}
+\\[3pt]
+\begin{tabular}[t]{|p{0.9\linewidth}|}
+
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white} Control structures}
+\\
+\begin{lstlisting}[language=Java, mathescape, aboveskip=-2pt,belowskip=-7pt]
+if(condition1){
+  /*if condition1 true, 
+  execute*/
+}
+else if(condition2){
+  /*if condition1 false and
+  condition2 true, execute */
+}
+else{
+  //if everything false, execute
+}\end{lstlisting}
+\\\hline
+\end{tabular}
+\\[3pt]
+\begin{tabular}[t]{|p{0.9\linewidth}|}
+
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Loops}
+\\
+\begin{lstlisting}[language=Java, mathescape, aboveskip=-2pt,belowskip=-7pt]
+for(int i=0; i<10; i++){
+  //execute 10 times
+}
+while(condition){
+  //execute as long as condition
+}
+//Do-While Loop
+do{
+  //execute at least once
+}while(condition);
+//For-Each Loop
+for(List<String> s : list1){
+  s.length();
+}
+\end{lstlisting}
+\\\hline
+\end{tabular}
+\\[3pt]
+\begin{tabular}[t]{|p{0.9\linewidth}|}
+
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Switch}
+\\
+\begin{lstlisting}[language=Java, mathescape, aboveskip=-2pt,belowskip=-7pt]
+switch(expression){
+  case 1:
+    //execute if expression==1
+    break;
+  case 2:
+    //execute if expression==2
+    break;
+  default:
+    /*execute if expression is
+     not 1 or 2 */
+    break;
+}
+\end{lstlisting}
+\\\hline
+\end{tabular}
+\\[3pt]
+\begin{tabular}{|p{0.9\linewidth}|}
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Functions}\\
+\begin{lstlisting}[language=Java, aboveskip=-2pt,belowskip=-7pt]
+//Delaration and Implementation
+<ret-type> <func-name>(<para-type> <para-name>, ...){
+    // function body
+    //execute
+    return <expression>;
+}
+//Function call
+<func-name>(<argument>, ...);
+\end{lstlisting}
+\\
+\hline
+\end{tabular}
+\\[3pt]
+\begin{tabular}{|p{0.9\linewidth}|}
+
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Operations}\\
+\\[-7pt]
+Arithmetic:
+\\[0pt]
+\hspace{3pt}\begin{tabular}{c|r}
+Operation & Example\ \ \  \\\hline
++ & 3 + 5 == 8 \\
+- & 7 - 2 == 5 \\
+$*$ & 4 * 2 == 8 \\
+/ & 7 / 2 == 3 \\
+\% (Modulo) & 72 \% 10 == 2
+\end{tabular}
+\\[25pt]
+Comparison:
+\\[0pt]
+\begin{tabular}{c|c|r}
+Operator & Math& Example \\\hline
+\textgreater & $>$ & 5 \textgreater \ 2\\
+\textgreater= & $\geq$ & 5 \textgreater=\ 2\\
+\textless & $<$ & 10 \textless\ 21\\
+\textless= &$\leq$ & 5 \textless=\ 5\\
+== & = & 5 == 5\\
+!= & $\neq$ & -32 != 32 
+\end{tabular}
+\\[31pt]\hline
+\end{tabular}
+\\[3pt]
+\end{minipage}\begin{minipage}[t]{0.25\linewidth}\vspace{0pt}
+\begin{tabular}{|p{0.9\linewidth}|}
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Types}\\
+\\[-7pt]
+Primitive data types:
+\\[-3pt]
+\vspace{0pt}\begin{tabular}[t]{p{0.07\linewidth} r}
+Type & Size
+\\\hline
+byte & 8 bit\\
+short & 16 bit\\
+int & 32 bit\\
+long & 64 bit\\
+\end {tabular}
+\begin{tabular}[t]{p{0.20\linewidth} p{0.19\linewidth}}
+Type & Size
+\\\hline
+float & 32 bit\\
+double & 64 bit\\
+\\[-7pt]
+Type & Value\\\hline
+char & 'a', 'G'\\
+\multirow{2}{*}{boolean} & true, false\\
+void & -
+\end {tabular}
+Typecasting:
+\ $byte\rightarrow short\rightarrow char\rightarrow int\rightarrow long\rightarrow float\rightarrow double $
+\\[110pt]
+Non-Primitive data types:
+\\[3pt]
+\begin{tabular}[t]{p{0.15\linewidth} p{0.55\linewidth}}
+Type & Value
+\\\hline
+String & "Hello World!"
+\\
+\multirow{2}{*}{Array} & int[] myNum = \{10, 20, 30, 40\};
+\\
+\end {tabular}
+\\[8pt]\hline
+\end{tabular}
+\\[3pt]
+\begin{tabular}{|p{0.9\linewidth}|}
+
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Declaration, Initialisation}\\
+\\[-7pt]
+Declaration:\ int a;\ String txt;\\
+\footnotesize\textless Type\textgreater \textless \ Name\textgreater;
+\\
+\\[-7pt]
+Initialisation:\ int b = 50; int b = a; \\
+\footnotesize \textless Type\textgreater\textless Name\textgreater =\textless Literal/Variable\textgreater ;\\
+\\[-7pt]
+Assignment:\ a = b;\ txt = "abc";
+\\[3pt]\hline
+\end{tabular}
+\\[3pt]
+
+\begin{tabular}{|p{0.9\linewidth}|}
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Arrays}\\
+\begin{lstlisting}[language=Java, aboveskip=-2pt,belowskip=-6pt]
+//Declaration
+<type>[] <name>;
+int[] arr;
+//allocation
+<name> = new <type>[<size>];
+arr = new int[5];
+//or
+<name> = {<element1>, ...};
+arr = {1, 2, 3, 4, 5};
+//Access
+<name>[<index>];
+arr[2] = 5;
+\end{lstlisting}
+\\\hline
+\end{tabular}
+\\[3pt]
+\begin{tabular}{|p{0.9\linewidth}|}
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Strings}\\
+\begin{lstlisting}[language=Java, aboveskip=-2pt,belowskip=-6pt]
+/*Strings are immutable and come 
+with a number of methods 
+already implemented*/
+//Declaration
+String <name>=new String(<value>);
+String helloString=new String("hello");
+//or
+String <name>=<value>;
+String helloString="hello";
+//Small Selection of useful Methods
+helloString.length();
+helloString.charAt(<index>);
+helloString.split(" ");
+\end{lstlisting}
+\\\hline
+\end{tabular}
+\\[3pt]
+\begin{tabular}{|p{0.9\linewidth}|}
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Collections}\\
+\\[-7pt]
+Common  datatypes are implemented in the 
+java.util package:\\
+\begin{lstlisting}[language=Java, aboveskip=-2pt,belowskip=-6pt]
+import java.util.*;
+/* Lists are ordered collections of 
+objects, similar to arrays */
+List<type><name>=new ArrayList<>();
+List<String> list1=new 
+ArrayList<>();
+list1.add("Hello");
+list1.add("World");
+System.out.println(list1.get(1));
+/*Sets are unordered and duplicate 
+free collections of objects */
+Set <type><name> = new HashSet<>();
+Set<String> set1 = new HashSet<>();
+set1.add("1");
+set1.add("2");
+set1.add("1"); //not added
+System.out.println(set1);
+//Output either [1, 2] or [2, 1]
+//Maps let you access data via a key
+Map<type1, type2><name> = new HashMap<>();
+Map<Integer, String> map = new HashMap<>();
+map.put(23, "foo");
+map.put(28, "foo");
+map.put(23, "bar"); //overwrites 23
+System.out.println(map); 
+//Output {23=bar, 28=foo} 
+System.out.println(map.get(23)); 
+//Output 'bar'
+\end{lstlisting}
+\\\hline
+\end{tabular}
+\\[3pt]
+\end{minipage}\begin{minipage}[t]{0.25\linewidth}\vspace{0pt}\begin{tabular}{|p{0.9\linewidth}|}
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Object-Oriented Programming}\\
+\vspace{-11pt}
+\fontsize{8}{5}\selectfont
+\begin{itemize}
+\setlength{\itemindent}{-15pt}
+\small
+\item[] Attributes: 
+\vspace{-5pt}
+\begin{itemize}
+\small
+\setlength{\itemindent}{-15pt}
+\setlength{\itemindent}{-37pt}\item[] Data (Variables)
+\item[] Describes the State of the Object
+\item[] Modifier always private
+\end{itemize}
+\item[] Methods: 
+\vspace{-5pt}
+\begin{itemize}
+\small
+\setlength{\itemindent}{-37pt}\item[] Code/Function
+\item[] Changes the state of the object, 
+\item[] Or interacts with other objects
+\item[] Modifier mostly public
+\end{itemize}
+\end{itemize}
+\begin{lstlisting}[language=Java, aboveskip=-2pt,belowskip=0pt]
+// Defining Class
+class <class-name>{
+  //Attributes
+  <modifier> <type> <var-name>;
+  //Methods
+  <modifier> <ret-type> <func-name>(<para-type> <para-name>, ...){
+    // function body
+  }
+}
+\end{lstlisting}
+\begin{lstlisting}[language=Java, aboveskip=0pt,belowskip=0pt]
+class Room {
+  private int chairs = 4; //Attribute
+  public void addChairs(int chairs)
+  {
+    this.chairs += chairs;
+  } //Method
+}\end{lstlisting}
+\vspace{5pt}
+\begin{lstlisting}[language=Java, aboveskip=0pt,belowskip=-6pt]
+//Creating Object
+<class-name> <obj-name> = 
+new <class-name>();
+Room kitchen = new Room();
+
+//Accessing Attributes and Methods
+<obj-name>.<var-name>; //Attribute
+kitchen.chairs;
+
+<obj-name>.<func-name>
+(<argument>, ...); //Method
+kitchen.addChairs(2);
+
+/*to access members of own class 
+use keyword this:*/
+this.<var-name>;
+this.<func-name>(<argument>, ...);
+this.chairs += 5;
+
+\end{lstlisting}
+\vspace{7pt}
+\fontsize{8}{5}\selectfont
+\begin{minipage}[l]{1\linewidth}
+\vspace{7pt}
+Access modifiers\small \ to define access to an attribute
+or method:\begin{itemize}
+\setlength{\itemindent}{-17pt}
+\item public: Anyone can access the member, default
+\item private: Only the class itself can access the member
+\item protected: Only the class itself and its subclasses can access the member
+\end{itemize}
+\vspace{2pt}
+\end{minipage}
+\begin{minipage}[l]{1\linewidth}
+\vspace{7pt}
+Constructor:\small
+\begin{itemize}
+\setlength{\itemindent}{-20pt}
+\item[] same name as class
+\item[] will get called if a new object is created
+\item[] mostly used for Initialisation of attributes
+\end{itemize}
+\vspace{2pt}
+\end{minipage}
+\begin{lstlisting}[language=Java, aboveskip=0pt,belowskip=-2pt]
+class <class-name> {
+  public <class-name>(...){
+    //constructor body
+  }
+  ...
+}
+class Student {
+  public Student(String name, ...){
+    this.name = name;
+    ...
+  }
+}
+\end{lstlisting}
+\\\hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}[t]{0.25\linewidth}\vspace{0pt}
+
+\begin{tabular}{|p{0.9\linewidth}|}
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Inheritance}\\
+\begin{lstlisting}[language=Java, aboveskip=-2pt,belowskip=-5pt]
+/* To give a subclass all members
+of a superclass
+to inherit use 'extends' keyword */
+class Vehicle {
+  ...
+}
+class Car extends Vehicle {
+  ...
+}
+\end{lstlisting}
+\\[-8pt]
+\begin{lstlisting}[language=Java, aboveskip=0pt,belowskip=-7pt]
+/* use 'super' to refer 
+to the superclass */
+class <Subclass-name> extends 
+<Superclass-name> {
+  public <Subclass-name>(...){
+    super();
+  }
+
+  /*use @Override to replace a 
+  method from the superclass */
+  @Override
+  public <Superclass-Method>(){
+    /* calls the method
+    of the superclass */
+    super.<Superclass-Method>();
+    //insert own code here
+  }
+}\end{lstlisting}
+\\[3pt]\hline
+\end{tabular}
+\\[3pt]
+\begin{tabular}{|p{0.9\linewidth}|}
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Abstract Classes and Inheritance}\\
+\begin{lstlisting}[language=Java, aboveskip=-2pt,belowskip=-7pt]
+/* Abstract classes cannot be 
+instantiated and need to be 
+inherited by subclasses, 
+abstract functions are declarations 
+of functions that have to be 
+implemented in subclasses */
+public abstract class <class-name> {
+  //abstract method
+  public abstract <ret-type> <func-name>(...);
+  ...
+}
+\end{lstlisting}
+\\[-8pt]
+\begin{lstlisting}[language=Java, aboveskip=0pt,belowskip=2pt]
+/* Interface is a group of 
+related methods with no 
+implementation. A class can 
+implement multiple interfaces */
+public interface <interface-name> {
+  public <ret-type> <func-name>
+  (...);
+}
+
+public class <class-name> implements <interface-name> {
+  ...
+}\end{lstlisting}
+\\[3pt]\hline
+\end{tabular}
+\\[3pt]
+\begin{tabular}{|p{0.9\linewidth}|}
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Static Variables, Static Functions}\\
+\\[-7pt]
+Static variables are variables that can be accessed from every object of the class. Only one copy of the variable exists.
+Static Functions are Functions with one implementation for every object of the class. Cannot access instance variables or methods directly.
+Can be accessed via Class name
+\begin{lstlisting}[language=Java, aboveskip=0pt,belowskip=-7pt]
+public class Test{
+  public static int counter;
+
+  public static int getCounter(){
+    return counter;
+  }
+}
+
+//getCounter() can be acccessed via
+Test.getCounter();\end{lstlisting}
+\\[3pt]\hline
+\end{tabular}
+\\[3pt]
+\begin{tabular}{|p{0.9\linewidth}|}
+\multicolumn{1}{|c|}{\cellcolor{headcol}\color{white}Generics}\\
+\\[-7pt]
+Generics are used to create classes
+for different data types:
+\\[-3pt]
+\begin{lstlisting}[language=Java, aboveskip=-2pt,belowskip=-6pt]
+  public class Tuple<T> {
+    private T item1, item2;
+    public void set(T item1, T item2) {
+        this.item1 = item1;// ...
+    }
+    public T get(int index) {
+        //return item1 or item2
+    }
+}
+\end{lstlisting}
+\\
+\hline
+\end{tabular}
+\end{minipage}
+\vspace{\fill}
+\fontsize{10}{9}\selectfont
+\begin{tabular}{ll}
+Official Documentation: & \url{https://docs.oracle.com/en/java/javase/18/docs/api/index.html}\\
+
+Educational: & \url{https://www.w3schools.com/java/}
+\end{tabular}
+\end{document}
